@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import ParentComponent from "./Components/ParentComponent";
+import Clock from "./Components/Clock";
+import StateFunc from "./Components/UseState";
+import PrintInput from "./Components/PrintInput";
 
-function App() {
+function Input() {
+  return <input type="text" placeholder="Enter your text"></input>;
+}
+
+function Submit() {
+  return <button type="submit">Submit</button>;
+}
+
+function Form() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Clock title="Time" />
+      <StateFunc />
+      <PrintInput />
+      <ParentComponent />
+      <Input />
+      <Input />
+      <Submit />
     </div>
   );
 }
 
-export default App;
+export default Form;
